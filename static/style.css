@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ffefba, #ffffff);
+    font-family: 'Pacifico', cursive;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    padding-top: 50px;
+    z-index: 1;
+    position: relative;
+    width: 90%;
+    margin: auto;
+}
+
+h1 {
+    font-size: 8vw;
+    color: #ff4081;
+    animation: bounce 2s infinite;
+}
+
+p {
+    font-size: 4vw;
+    color: #333;
+    margin-top: 20px;
+}
+
+form {
+    margin-top: 40px;
+}
+
+input, button {
+    padding: 12px;
+    font-size: 4vw;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+}
+
+input {
+    width: 60%;
+}
+
+button {
+    background-color: #ff4081;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e73370;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Balloons */
+.balloons {
+    position: absolute;
+    bottom: -70px;
+    width: 100%;
+}
+
+.balloon {
+    position: absolute;
+    bottom: 0;
+    width: 10vw;
+    height: 14vw;
+    background-color: #ff4081;
+    border-radius: 50% 50% 50% 50%;
+    left: calc(var(--i) * 20vw + 5vw);
+    animation: float 5s ease-in-out infinite;
+}
+
+.balloon::after {
+    content: '';
+    position: absolute;
+    width: 0.5vw;
+    height: 8vw;
+    background: #333;
+    left: 50%;
+    top: 14vw;
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50vh) rotate(15deg); }
+    100% { transform: translateY(0) rotate(-15deg); }
+}

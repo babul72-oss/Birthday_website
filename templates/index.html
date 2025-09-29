@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday!</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<canvas id="confetti-canvas"></canvas>
+
+<div class="container">
+    <h1>Happy Birthday 🎉</h1>
+    <p>Wishing you loads of happiness and fun on your special day!</p>
+
+    <div class="balloons">
+        <div class="balloon" style="--i:0;"></div>
+        <div class="balloon" style="--i:1;"></div>
+        <div class="balloon" style="--i:2;"></div>
+        <div class="balloon" style="--i:3;"></div>
+        <div class="balloon" style="--i:4;"></div>
+    </div>
+
+    <form id="wishForm" action="{{ url_for('wish') }}" method="post">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <button type="submit">Send Wish</button>
+    </form>
+</div>
+
+<script src="{{ url_for('static', filename='confetti.js') }}"></script>
+</body>
+</html>
